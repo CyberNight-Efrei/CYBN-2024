@@ -1,0 +1,9 @@
+{
+    "codec": "MJPG",
+    "fps": 25,
+    "extension": ".avi",
+    "filename": "video",
+    "tmp_archive": "tmp/archive.zip",
+    "encoding_type": 2,
+    "encoding_mode": 0
+}

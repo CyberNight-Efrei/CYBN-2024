@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.champion-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.champion-icon {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    animation: pulse 1s ease-in-out infinite alternate;
+    transition: transform 0.3s ease-in-out;
+}
+
+.champion-icon:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.champion-name {
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.champion-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.champion-info h2 {
+    color: #007bff;
+}
+
+.skills {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills li {
+    margin-bottom: 15px;
+}
+
+.skills h3 {
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.skills p {
+    color: #ccc;
+    animation: fadeInText 1s ease-out;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.skills p:first-letter {
+    font-size: 150%;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.skill-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.stat-container {
+    width: calc(50% - 10px);
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stat-container h3 {
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.stat-container .stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.stat-container p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.stat-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.stat-container button:hover {
+    background-color: #0056b3;
+}
+
+.patch-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+.patch-button:hover {
+    background-color: #0056b3;
+}

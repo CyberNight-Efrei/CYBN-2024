@@ -1,0 +1,39 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <div class="uk-card uk-card-default uk-card-body">
+        <form method="post">
+            <fieldset class="uk-fieldset">
+                <legend class="uk-legend">Se connecter</legend>
+
+                <div class="uk-margin">
+                    <input required aria-label="Input"
+                            {% if errors.nickname %}
+                           title="{{ errors.nickname|join }}"
+                           class="uk-input uk-form-danger"
+                            {% else %}
+                           class="uk-input"
+                            {% endif %}
+                           type="text" name="nickname" placeholder="Pseudo">
+                </div>
+
+                <div class="uk-margin">
+                    <input required aria-label="Input"
+                            {% if errors.password %}
+                           title="{{ errors.password|join }}"
+                           class="uk-input uk-form-danger"
+                            {% else %}
+                           class="uk-input"
+                            {% endif %}
+                           type="password" name="password" placeholder="Mot de passe">
+                </div>
+
+                <div class="uk-margin uk-align-right">
+                    <button class="uk-button uk-button-default">
+                        Se connecter
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

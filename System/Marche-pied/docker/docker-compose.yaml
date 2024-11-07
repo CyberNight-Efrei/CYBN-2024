@@ -1,0 +1,8 @@
+services:
+  all:
+    container_name: marche-pied
+    hostname: marche-pied
+    build:
+      context: ../../../../../Priv/Marche-pied
+    ports:
+      - "2222:22"

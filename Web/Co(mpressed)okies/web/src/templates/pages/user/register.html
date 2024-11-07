@@ -1,0 +1,68 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+    <div class="uk-card uk-card-default uk-card-body">
+        <form method="post">
+            <fieldset class="uk-fieldset">
+                <legend class="uk-legend">S'enregistrer</legend>
+
+                <div class="uk-margin">
+                    <div class="uk-child-width-1-2" uk-grid>
+                        <div>
+                            <input required type="text"
+                                   name="first_name" placeholder="Prénom"
+                                    {% if errors.first_name %}
+                                   title="{{ errors.first_name|join }}"
+                                   class="uk-input uk-form-danger"
+                                    {% else %}
+                                   class="uk-input"
+                                    {% endif %}
+                                   aria-label="Input">
+                        </div>
+                        <div>
+                            <input required type="text"
+                                   name="last_name" placeholder="Nom"
+                                    {% if errors.last_name %}
+                                   title="{{ errors.last_name|join }}"
+                                   class="uk-input uk-form-danger"
+                                    {% else %}
+                                   class="uk-input"
+                                    {% endif %}
+                                   aria-label="Input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <input required type="text"
+                           name="nickname"
+                            {% if errors.nickname %}
+                           title="{{ errors.nickname|join }}"
+                           class="uk-input uk-form-danger"
+                            {% else %}
+                           class="uk-input"
+                            {% endif %}
+                           placeholder="Pseudo" aria-label="Input">
+                </div>
+
+                <div class="uk-margin">
+                    <input required type="password"
+                           name="password"
+                            {% if errors.password %}
+                           title="{{ errors.password|join }}"
+                           class="uk-input uk-form-danger"
+                            {% else %}
+                           class="uk-input"
+                            {% endif %}
+                           placeholder="Mot de passe" aria-label="Input">
+                </div>
+
+                <div class="uk-margin uk-align-right">
+                    <button class="uk-button uk-button-default">
+                        S'enregistrer
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

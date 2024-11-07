@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  challenge:
+    build:
+      context: web/
+    restart: always
+    ports:
+      - "6060:8000"

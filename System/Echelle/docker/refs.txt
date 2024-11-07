@@ -1,0 +1,7 @@
+https://www.root-me.org/fr/Challenges/App-Script/Shared-Objects-hijacking?debut_dernieres_validations=30&action_solution=voir#ancre_solution
+https://book.hacktricks.xyz/linux-hardening/privilege-escalation/ld.so.conf-example
+https://www.boiteaklou.fr/Abusing-Shared-Libraries.html
+https://blog.pentesteracademy.com/abusing-missing-library-for-privilege-escalation-3-minute-read-296dcf81bec2
+https://mindonmind.github.io/notes/linux/change_rpath.html
+https://stackoverflow.com/questions/14715175/what-is-the-difference-between-ld-preload-path-and-ld-library-path#:~:text=LD_PRELOAD%20(not%20LD_PRELOAD_PATH%20)%20is%20a,would%20have%20been%20loaded%20anyway
+https://tbhaxor.com/understanding-concept-of-shared-libraries/

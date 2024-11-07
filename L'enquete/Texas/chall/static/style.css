@@ -1,0 +1,340 @@
+/********************************************
+   AUTHOR:  			Erwin Aligam
+   WEBSITE:   			http://www.styleshout.com/
+	TEMPLATE NAME: 	Azulmedia
+   TEMPLATE CODE: 	S-0008
+   VERSION:          2.0
+ *******************************************/
+
+/********************************************
+   HTML ELEMENTS
+********************************************/
+
+/* top elements */
+html {
+    block-size: fit-content;
+}
+
+* {
+    padding: 0; margin: 0;
+}
+body {
+    margin: 0; 	padding: 0;
+    font: normal .70em/1.6em Verdana, Tahoma, sans-serif;
+    color: #BDBDBD;
+    background: #000;
+    text-align: center;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: url(https://t4.ftcdn.net/jpg/03/37/36/11/360_F_337361168_iS8uC59yuJm48uqZuIIwykPjNPeXrFEQ.jpg) repeat center center fixed;
+}
+/* links */
+a {
+    color: #FFF;
+    background-color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    color: #FFF;
+    background-color: inherit;
+    text-decoration: underline;
+}
+
+/* headers */
+h1, h2, h3 {
+    font: normal 1.3em 'Trebuchet MS', Arial, Sans-serif;
+    color: #FFF;
+}
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.4em; text-transform:uppercase; font-weight: bold;}
+h3 { font-size: 1.3em; font-weight: bold; }
+
+p, h1, h2, h3 {
+    margin: 0;
+    padding: 10px 15px;
+}
+
+ul, ol {
+    margin: 10px 30px;
+    padding: 0 15px;
+    color: #FFF;
+}
+
+/* images */
+img {
+    border: 3px solid #555;
+}
+img.no-border {
+    border: none;
+}
+img.float-right {
+    margin: 5px 0px 5px 15px;
+}
+img.float-left {
+    margin: 5px 15px 5px 0px;
+}
+a img {
+    border: 3px solid #555;
+}
+a:hover img {
+    border: 3px solid #CCC !important; /* IE fix*/
+    border: 3px solid #555;
+}
+
+code {
+    margin: 5px 0;
+    padding: 10px;
+    text-align: left;
+    display: block;
+    overflow: auto;
+    font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace;
+    /* white-space: pre; */
+    background: #0A1646;
+}
+acronym {
+    cursor: help;
+    border-bottom: 1px solid #777;
+}
+blockquote {
+    margin: 15px;
+    padding: 0 0 0 20px;
+    background: #0A1646;
+    font: bold 1.3em/1.5em 'Trebuchet MS', Sans-serif;
+}
+
+/* form elements */
+form {
+    margin: 10px 15px;
+    padding: 0;
+    background: #0A1646;
+}
+label {
+    display:block;
+    font-weight:bold;
+    margin:5px 0;
+}
+input {
+    padding: 2px;
+    border:1px solid #eee;
+    font: normal 1em Verdana, sans-serif;
+    color:#777;
+}
+textarea {
+    width: 250px;
+    padding:2px;
+    font: normal 1em Verdana, sans-serif;
+    border:1px solid #eee;
+    height:100px;
+    display:block;
+    color:#777;
+}
+input.button {
+    margin: 0;
+    font: bold 1em Arial, Sans-serif;
+    border: 1px solid #CCC;
+    background: #FFF;
+    padding: 2px 3px;
+    color: #333;
+}
+
+/* search form */
+.searchform form{
+    background-color: transparent;
+    border: none;
+    margin: 0; padding: 0;
+}
+.searchform input.textbox {
+    margin: 0;
+    width: 145px;
+    border: 1px solid #777;
+    background: #FFF;
+    color: #333;
+    height: 14px;
+    vertical-align: top;
+}
+.searchform input.button {
+    margin: 0;
+    padding: 2px 3px;
+    font: bold 12px Arial, Sans-serif;
+    background: #FFF;
+    border: 1px solid #f2f2f2;
+    color: #333;
+    width: 65px;
+    vertical-align: top;
+}
+
+/***********************
+	  LAYOUT
+************************/
+#wrap {
+    background: #212B5C;
+    margin: 20px auto 0 auto;
+    text-align: left;
+    border-color: #444;
+    border-style: solid;
+    border-width: 1px 1px 5px 1px;
+    min-height: 70%;
+}
+#wrap, #footer-wrap {
+    width: 85%;
+}
+
+/* header */
+#header {
+    position: relative;
+    height: 110px;
+    background: #7F8082 repeat-x 0% 100%;
+    border-bottom: 5px solid #444;
+}
+#header h1#logo {
+    position: absolute;
+    top: 5px; left: 20px;
+    margin: 0; padding: 0;
+    font: bolder 50px 'Trebuchet MS', Arial, Sans-serif;
+    letter-spacing: -2px;
+}
+#header h2#slogan {
+    position: absolute;
+    top: 50px; left: 65px;
+    color: #FFF;
+    text-indent: 0px;
+    font: bold 12px Tahoma, 'Trebuchet MS', Sans-serif;
+    text-transform: none;
+}
+
+/* content-wrap */
+#content-wrap {
+    clear: both;
+    margin: 0; padding: 0;
+}
+
+/* box */
+.box {
+    margin: 10px 15px;
+    border: 1px solid #0A1646;
+    background-color: #1B2455;
+}
+
+/* main */
+#main {
+    margin: 0 0 0 270px;
+    padding-top: 20px;
+}
+#main .box {
+    margin-left: 0;
+}
+
+/* sidebar */
+#sidebar {
+    float: left;
+    width: 250px;
+    margin: 0;
+    padding-top: 20px;
+}
+#sidebar ul.sidemenu {
+    margin: 0 0 0 15px; padding: 0;
+    background: #242424;
+    border-top: 5px solid #444;
+}
+#sidebar ul.sidemenu li {
+    display: inline;
+    list-style: none;
+}
+#sidebar ul.sidemenu li a {
+    display: block;
+    padding: 5px 10px 5px 15px;
+    text-decoration: none;
+    color: #CCC;
+    font-weight: bold;
+}
+
+#sidebar ul.sidemenu li a#secret {
+    color: darkorange;
+}
+
+
+#sidebar ul.sidemenu li a:hover {
+    color: #333;
+    background: #A0A0A0;
+}
+
+/* Footer */
+#footer-wrap {
+    clear: both;
+    color: #FFF;
+    background: #000;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 88%;
+}
+#footer-wrap a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+}
+#footer-wrap .footer-left{
+    float: left;
+    width: 65%;
+    padding-bottom: 20px;
+}
+#footer-wrap .footer-right{
+    float: right;
+    width: 30%;
+    padding-bottom: 20px;
+}
+
+/* menu tabs */
+#header ul {
+    position: absolute;
+    top: 20px; right: 20px;
+    margin:0; padding: 0;
+    list-style:none;
+    font: bold 1.3em  'Trebuchet MS', Tahoma, verdana,  sans-serif;
+    height: 2.3em;
+}
+
+#header p {
+    position: absolute;
+    bottom: 10px; right: 20px;
+    margin:0; padding: 0;
+    list-style:none;
+    font: bold 1.3em  'Trebuchet MS', Tahoma, verdana,  sans-serif;
+    height: 2.3em;
+}
+
+#header li {
+    display:inline;
+    margin:0; padding:0;
+}
+#header a {
+    float: left;
+    margin:0;
+    padding:3px 10px 2px 10px;
+    text-decoration:none;
+    color: #CCC;
+}
+#header a:hover {
+    border-top: 5px solid #CCC;
+}
+#header #current a {
+    color: #FFF;
+    border-top: 5px solid #FFF;
+}
+/* end menu tabs */
+
+/* alignment classes */
+.float-left  { float: left; }
+.float-right {	float: right; }
+.align-left  {	text-align: left; }
+.align-right {	text-align: right; }
+
+/* additional classes */
+.clear {	clear: both; }
+.gray  {	color: #A0A0A0; }
+.comments {
+    text-align: right;
+    padding: 7px 15px;
+    margin: 20px 15px 15px 15px;
+    background: #0A1646;
+}

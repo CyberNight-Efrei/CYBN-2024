@@ -1,0 +1,8 @@
+services:
+  all:
+    container_name: echelle
+    hostname: echelle
+    build:
+      context: .
+    ports:
+      - "2224:22"

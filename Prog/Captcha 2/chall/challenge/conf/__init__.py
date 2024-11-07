@@ -1,0 +1,2 @@
+DURATION = 2
+TO_SOLVE = 5

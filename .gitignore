@@ -1,0 +1,6 @@
+.obsidian/
+.idea/
+*.burp
+*.bak
+.DS_Store
+Web/Coup de bol/web/kobe/

@@ -1,0 +1,12 @@
+2024-10-31 22:24:29,798 INFO supervisord started with pid 27132
+2024-10-31 22:24:30,811 INFO spawned: 'apache2' with pid 27133
+2024-10-31 22:24:30,812 INFO spawnerr: can't find command '/usr/bin/php5.6'
+2024-10-31 22:24:30,848 WARN exited: apache2 (exit status 1; not expected)
+2024-10-31 22:24:31,850 INFO spawned: 'apache2' with pid 27136
+2024-10-31 22:24:31,851 INFO spawnerr: can't find command '/usr/bin/php5.6'
+2024-10-31 22:24:31,881 WARN exited: apache2 (exit status 1; not expected)
+2024-10-31 22:24:33,887 INFO spawned: 'apache2' with pid 27145
+2024-10-31 22:24:33,887 INFO spawnerr: can't find command '/usr/bin/php5.6'
+2024-10-31 22:24:33,887 WARN received SIGINT indicating exit request
+2024-10-31 22:24:33,888 INFO waiting for apache2 to die
+2024-10-31 22:24:33,920 WARN stopped: apache2 (terminated by SIGTERM)

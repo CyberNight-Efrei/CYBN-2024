@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  challenge:
+    build:
+      context: web/
+      args:
+        FLAG1: CYBN{Wh4t_4_w31rd_w4y
+        FLAG2: _t0_st0r3_d4t4}
+    restart: always
+    ports:
+      - "6262:8000"

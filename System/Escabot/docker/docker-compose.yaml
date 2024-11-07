@@ -1,0 +1,8 @@
+services:
+  all:
+    container_name: escabot
+    hostname: escabot
+    build:
+      context: .
+    ports:
+      - "2223:22"

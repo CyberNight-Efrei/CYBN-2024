@@ -1,0 +1,25 @@
+<html lang="fr">
+    <head>
+        <title>Laverie sans contact</title>
+    </head>
+    <body>
+        <h1>Laverie sans contact</h1>
+        <a href="/static/blank_card.nfc" download="blank_card.nfc">Télécharger une carte vierge</a>
+        {% if card_data %}
+            <p>Solde : ${{ format_price(card_data["balance"]) }}</p>
+            <p>Dernière recharge : ${{ format_price(card_data["refilled_balance"]) }}</p>
+        {% endif %}
+        {% if error != None %}
+            <p>{{ error }}</p>
+        {% endif %}
+        {% if show_flag %}
+            <p>{{ get_flag() }}</p>
+        {% endif %}
+        <form action="/" method="post">
+            <input type="file" id="nfc_file" accept=".nfc" onchange="onNfcKeySubmit()">
+            <input type="hidden" id="card_data" name="card_data">
+            <input type="submit" value="Payer">
+        </form>
+        <script src="/static/app.js"></script>
+    </body>
+</html>

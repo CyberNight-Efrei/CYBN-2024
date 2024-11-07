@@ -1,0 +1,58 @@
+<!doctype html>
+<head>
+    <title>{% block title %}Super Secure Website{% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/uikit.min.css') }}">
+    <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+</head>
+<body>
+<nav class="uk-navbar-container">
+    <div class="uk-container">
+        <div uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li {% if url_for(request.endpoint) == url_for('home.home') %}class="uk-active"{% endif %}>
+                        <a href="{{ url_for('home.home') }}">Accueil</a>
+                    </li>
+                    <li {% if url_for(request.endpoint) == url_for('admin.home') %}class="uk-active"{% endif %}>
+                        <a href="{{ url_for('admin.home') }}">Administration</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="#">Mon compte</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                {% if g.user %}
+                                    <li {% if url_for(request.endpoint) == url_for('user.logout') %}class="uk-active"{% endif %}>
+                                        <a href="{{ url_for('user.logout') }}">Se déconnecter</a>
+                                    </li>
+                                {% else %}
+                                    <li {% if url_for(request.endpoint) == url_for('user.login') %}class="uk-active"{% endif %}>
+                                        <a href="{{ url_for('user.login') }}">Se connecter</a>
+                                    </li>
+                                    <li {% if url_for(request.endpoint) == url_for('user.register') %}class="uk-active"{% endif %}>
+                                        <a href="{{ url_for('user.register') }}">S'enregistrer</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="uk-container uk-margin-top">
+    {% block content %}{% endblock %}
+</div>
+</body>

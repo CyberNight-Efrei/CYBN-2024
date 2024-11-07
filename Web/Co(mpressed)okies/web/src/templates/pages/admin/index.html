@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="uk-child-width-1-1@m uk-grid-small uk-grid-match" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">GG {{ user.nickname }} !</h3>
+            <p>Voilà la première partie du flag: {{ flag1 }}<br>Va plus loin pour trouver la seconde 👀</p>
+
+            <pre><code>{{ user_code }}</code></pre>
+        </div>
+    </div>
+</div>
+{% endblock %}

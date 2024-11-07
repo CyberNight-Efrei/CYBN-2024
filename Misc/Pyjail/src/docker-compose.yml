@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  challenge:
+    build:
+      context: .
+    restart: always
+    ports:
+      - "18000:8000"

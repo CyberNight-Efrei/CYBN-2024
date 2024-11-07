@@ -1,0 +1,64 @@
+:root {
+	--bulma-body-overflow-y: auto;
+}
+
+#app {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+#comments {
+	flex: 1;
+	display: block;
+	flex-direction: column;
+	overflow-y: auto;
+	scroll-behavior: smooth;
+}
+
+#form {
+	flex-grow: inherit;
+	margin-bottom: 1.25rem;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ffffff40;
+	border: 0px none transparent;
+	border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #ffffff80;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background: #ffffffb0;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+	border: 0px none transparent;
+	border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+	background: transparent;
+}
+
+::-webkit-scrollbar-track:active {
+	background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}

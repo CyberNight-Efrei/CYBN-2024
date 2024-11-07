@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="theme-dark">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Captcha 2</title>
+	<link rel="icon" href="/static/favicon.ico" />
+	<link rel="stylesheet" href="/static/css/global.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="title">Je ne suis pas un robot</h1>
+		<h2 class="subtitle">Mais tu dois valider {{to_solve}} captcha en moins de {{duration}} secondes.</h2>
+		<form action="">
+			<div id="captcha">
+				<div class="skeleton"></div>
+				<img hidden/>
+			</div>
+			<input id="code" type="text" name="code" placeholder="Code" maxlength="8" autocomplete="off"/>
+			<div id="error" hidden></div>
+		</form>
+	</div>
+
+	<script>
+		const errorNotif = document.querySelector('#error')
+		const captcha = document.querySelector('#captcha')
+		const captchaSkeleton = captcha.querySelector('.skeleton')
+		const captchaImage = captcha.querySelector('img')
+		const captchaCode = document.querySelector('#code')
+
+		function updateCaptcha() {
+			errorNotif.setAttribute('hidden', true)
+			captchaImage.setAttribute('hidden', true)
+			captchaSkeleton.removeAttribute('hidden')
+			captchaCode.value = ''
+			captchaCode.focus()
+			fetch('/api/captcha')
+				.then(data => data.text())
+				.then(imgData => {
+					captchaImage.setAttribute('src', `data:image/png;base64, ${imgData}`)
+					captchaImage.removeAttribute('hidden')
+					captchaSkeleton.setAttribute('hidden', true)
+				})
+		}
+
+		function submitCaptcha(code) {
+			fetch('/api/captcha', {
+				method: 'POST',
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({code})
+			})
+				.then(async response => {
+					const data = await response.json()
+					if (!response.ok) {
+						if (data.error === 1) updateCaptcha()
+						throw new Error(data.message)
+					}
+					if (data.flag) return document.location.reload()
+					updateCaptcha()
+				})
+				.catch(err => {
+					errorNotif.innerText = '⚠️ ' + err.message
+					errorNotif.removeAttribute('hidden')
+				})
+		}
+
+		setTimeout(updateCaptcha, 500)
+
+		document.querySelector('form').addEventListener('submit', ev => {
+			ev.preventDefault()
+			submitCaptcha(captchaCode.value)
+		})
+	</script>
+</body>
+
+</html>

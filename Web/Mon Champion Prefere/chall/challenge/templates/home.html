@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivir - League of Legends Champion</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="champion-container">
+        <img src="/static/sivir.jpeg" alt="Sivir Icon" class="champion-icon">
+        <h1 class="champion-name">Sivir</h1>
+        <div class="champion-info">
+            <h2>Compétences</h2>
+            <ul class="skills">
+                <li>
+                    <img src="/static/q-sivir.webp" alt="Q Icon" class="skill-icon">
+                    <h3>Compétence Q - Boomerang de lame</h3>
+                    <p>Sivir lance sa lame boomerang, infligeant des dégâts à l'aller et au retour. Les ennemis touchés par la lame boomerang sont ralentis.</p>
+
+                </li>
+                <li>
+                    <img src="/static/z-sivir.webp" alt="W Icon" class="skill-icon">
+                    <h3>Compétence W - Lame de ricochet</h3>
+                    <p>Les attaques de base de Sivir rebondissent sur les ennemis proches, infligeant des dégâts réduits à chaque rebond.</p>
+                </li>
+                <li>
+                    <img src="/static/e-sivir.webp" alt="E Icon" class="skill-icon">
+                    <h3>Compétence E - Bouclier anti-sort</h3>
+                    <p>Sivir crée un bouclier magique qui bloque le prochain sort ennemi. Si un sort est bloqué, Sivir récupère du mana.</p>
+                </li>
+                <li>
+                    <img src="/static/r-sivir.webp" alt="R Icon" class="skill-icon">
+                    <h3>Compétence R - On the Hunt</h3>
+                    <p>Sivir active son ultime, augmentant sa vitesse de déplacement et celle de ses alliés proches pendant une durée limitée.</p>
+                </li>
+            </ul>
+            <div class="stats">
+                <div class="stat-container">
+                    <h3>Power</h3>
+                    <div class="stat">
+                        <button onclick="decrement('power')">-</button>
+                        <p id="power">1</p>
+                        <button onclick="increment('power')">+</button>
+                    </div>
+                </div>
+                <div class="stat-container">
+                    <h3>Attack Speed</h3>
+                    <div class="stat">
+                        <button onclick="decrement('attack-speed')">-</button>
+                        <p id="attack-speed">2</p>
+                        <button onclick="increment('attack-speed')">+</button>
+                    </div>
+                </div>
+                <div class="stat-container">
+                    <h3>Move Speed</h3>
+                    <div class="stat">
+                        <button onclick="decrement('move-speed')">-</button>
+                        <p id="move-speed">3</p>
+                        <button onclick="increment('move-speed')">+</button>
+                    </div>
+                </div>
+                <div class="stat-container">
+                    <h3>Crit</h3>
+                    <div class="stat">
+                        <button onclick="decrement('crit')">-</button>
+                        <p id="crit">4</p>
+                        <button onclick="increment('crit')">+</button>
+                    </div>
+                </div>
+                <div class="stat-container">
+                    <h3>Cooldown</h3>
+                    <div class="stat">
+                        <button onclick="decrement('cooldown')">-</button>
+                        <p id="cooldown">5</p>
+                        <button onclick="increment('cooldown')">+</button>
+                    </div>
+                </div>
+                <div class="stat-container">
+                    <h3>Defense</h3>
+                    <div class="stat">
+                        <button onclick="decrement('defense')">-</button>
+                        <p id="defense">6</p>
+                        <button onclick="increment('defense')">+</button>
+                    </div>
+                </div>
+            </div>
+            <form id="patch-form" style="display: none;">
+                <input type="hidden" name="patch" value="True">
+            </form>
+            <button type="submit" class="patch-button" id="patch">Patch !</button>
+        </div>
+    </div>
+    <script>
+        function increment(stat) {
+            var element = document.getElementById(stat);
+            var value = parseInt(element.innerText);
+            element.innerText = value + 1;
+        }
+
+        function decrement(stat) {
+            var element = document.getElementById(stat);
+            var value = parseInt(element.innerText);
+            if (value > 0) {
+                element.innerText = value - 1;
+            }
+        }
+        document.getElementById('patch').addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/patch-the-champ', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Le champion a été patché !');
+                } else {
+                    alert('Error: ' + xhr.statusText);
+                }
+            };
+            var data = JSON.stringify({ "patch": true });
+            xhr.send(data);
+        });
+    </script>
+</body>
+</html>
