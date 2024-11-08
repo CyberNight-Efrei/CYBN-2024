@@ -8,6 +8,7 @@ scripts=(
 "Hardware/Laverie sans contact/chall/build_docker.sh"
 "Misc/Ingénieur en phrase/chall/build_docker.sh"
 "Misc/Pyjail/src/build_docker.sh"
+"Reverse/M30W_Bot/build_docker.sh"
 "System/Escabot/docker/build_docker.sh"
 "System/Marche-pied/docker/build_docker.sh"
 "System/Echelle/docker/build_docker.sh"
