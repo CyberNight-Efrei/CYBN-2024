@@ -1,8 +1,8 @@
 CAT="prog"
 CHALL="intro-a-la-prog"
 NAME="${CAT}_${CHALL}"
-PORT=4000
-HOST_PORT=4000
+PORT=4002
+HOST_PORT=4002
 
 docker rm -f $NAME
 docker image prune -f

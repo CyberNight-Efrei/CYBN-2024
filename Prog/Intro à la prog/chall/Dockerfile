@@ -10,10 +10,10 @@ WORKDIR /app
 COPY src .
 
 # Expose port the server is reachable on
-EXPOSE 4000
+EXPOSE 4002
 
 # Set flag
 ENV FLAG="CYBN{4_r3aL_pR0Gr4mm3R}"
 
 # Run netcat server
-CMD ["tcpserver", "-c", "255", "-HR", "0.0.0.0", "4000", "/usr/local/bin/python3", "app.py"]
+CMD ["tcpserver", "-c", "255", "-HR", "0.0.0.0", "4002", "/usr/local/bin/python3", "app.py"]
