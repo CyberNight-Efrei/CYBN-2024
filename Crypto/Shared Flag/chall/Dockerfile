@@ -25,7 +25,7 @@ EXPOSE 3002
 USER nobody
 
 # Set flag
-ENV FLAG="CYBN{REDACTED_SHARED_SECRET}"
+ENV FLAG="CYBN{5m4ll_Gr0up5_c4n_0pt1m1s3_Brut3F0rc3}"
 
 # Run supervisord
 CMD ["socat", "-dd", "TCP-LISTEN:3002,reuseaddr,fork", "exec:python -u /app/app.py"]

@@ -5,7 +5,7 @@ from Crypto.Cipher import AES
 from Crypto.Util.number import getPrime, long_to_bytes
 from Crypto.Util.Padding import pad
 
-FLAG = os.environ.get('FLAG', 'CYBN{REDACTED}')
+FLAG = os.environ.get('FLAG', 'Une erreur est survenue, contactez les admins sur discord.')
 
 
 def show_intro(g, p, A):
@@ -28,7 +28,6 @@ On a qu'à utiliser Diffie-Hellman tiens ! Envoie moi ta clé publique et je t'e
 Voici les paramètres que j'ai choisi :
     - g : {g}
     - p : {p}
-    - A : {A}
 """)
 
 def encrypt_flag(secret: int) -> str:

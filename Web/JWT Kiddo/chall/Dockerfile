@@ -25,7 +25,7 @@ COPY conf/supervisord.conf /etc/supervisord.conf
 EXPOSE 8001
 
 # Set flag
-ENV FLAG="CYBN{REDACTED_FLAG_FORUM}"
+ENV FLAG="CYBN{h4ck3r_2_h4ck3r5}"
 
 # Run entrypoint
 COPY entrypoint.sh /entrypoint.sh

@@ -25,7 +25,7 @@ EXPOSE 3000
 USER nobody
 
 # Set flag
-ENV FLAG="CYBN{REDACTED_CASCADE_1}"
+ENV FLAG="CYBN{C45c4d3_R3v34l3d}"
 
 # Run supervisord
 CMD ["socat", "-dd", "TCP-LISTEN:3000,reuseaddr,fork", "exec:python -u /app/app.py"]

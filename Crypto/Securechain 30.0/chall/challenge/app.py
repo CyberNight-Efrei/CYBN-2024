@@ -14,10 +14,10 @@ def generate_id():
 
 
 def compute_key(account_id):
-    key = str(account_id)
+    key = str(account_id).encode()
     for _ in range(30):
-        key = md5(key.encode()).hexdigest()
-    return key
+        key = md5(key).digest()
+    return key.hex()
 
 
 def login(account_id: int):
@@ -60,13 +60,16 @@ def main():
     while True:
         print_center(strings.MENU)
         choice = input('\n> ').strip()
-        try:
-            login(int(choice))
-        except Exception:
-            if choice == 'register':
-                register()
-            elif choice == 'credits':
-                credits()
+        if choice == 'register':
+            register()
+        elif choice == 'credits':
+            credits()
+        else:
+            try:
+                login(int(choice))
+            except Exception:
+                pass
+            
 
 
 ADMIN_ID = generate_id()

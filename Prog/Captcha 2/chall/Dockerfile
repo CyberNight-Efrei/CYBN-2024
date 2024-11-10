@@ -25,7 +25,7 @@ COPY conf/supervisord.conf /etc/supervisord.conf
 EXPOSE 4001
 
 # Set flag
-ENV FLAG="CYBN{REDACTED_CAPTCHA_2}"
+ENV FLAG="CYBN{r34l_H4ck3r5_us3_0pt1c4l_r3c0gn1t10n}"
 
 # Run supervisord
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
