@@ -1,25 +1,51 @@
 <html lang="fr">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laverie sans contact</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Laverie sans contact</h1>
-        <a href="/static/blank_card.nfc" download="blank_card.nfc">Télécharger une carte vierge</a>
-        {% if card_data %}
-            <p>Solde : ${{ format_price(card_data["balance"]) }}</p>
-            <p>Dernière recharge : ${{ format_price(card_data["refilled_balance"]) }}</p>
-        {% endif %}
-        {% if error != None %}
-            <p>{{ error }}</p>
-        {% endif %}
-        {% if show_flag %}
-            <p>{{ get_flag() }}</p>
-        {% endif %}
-        <form action="/" method="post">
-            <input type="file" id="nfc_file" accept=".nfc" onchange="onNfcKeySubmit()">
-            <input type="hidden" id="card_data" name="card_data">
-            <input type="submit" value="Payer">
-        </form>
+        <div class="m-4 container-md mx-auto">
+            <h1 class="text-center">Laverie sans contact</h1>
+            <p class="text-center">Bienvenue dans la laverie sans contact, aidez-moi à faire ma lessive pour obtenir le flag</p>
+            {% if not card_data %}
+                <div class="alert alert-info">Si vous n'avez pas encore de carte, vous pouvez en télécharger une en cliquant ici : <a class="btn btn-primary btn-sm" href="/static/blank_card.nfc" download="blank_card.nfc">Télécharger</a></div>
+            {% endif %}
+            {% if card_data and card_data["balance"] < 4 %}
+                <div class="alert alert-warning">Attention, votre solde est insuffisant pour effectuer un lavage, il vous faut minimum $4 !</div>
+            {% endif %}
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+            {% if show_flag %}
+                <div class="alert alert-success">Félicitations ! Voilà le flag : <b>{{ get_flag() }}</b></div>
+            {% endif %}
+            {% if card_data %}
+                <ul>
+                    <li>
+                        Solde :
+                        {% if card_data["balance"] > 4 %}
+                            <ul>
+                                <li>Ancien : <b>${{ format_price(card_data["balance"]) }}</b></li>
+                                <li>Nouveau : <b>${{ format_price(card_data["balance"] - 4) }}</b></li>
+                            </ul>
+                        {% else %}
+                            <b>${{ format_price(card_data["balance"]) }}</b>
+                        {% endif %}
+                    </li>
+                    <li>Dernière recharge : <b>${{ format_price(card_data["refilled_balance"]) }}</b></li>
+                </ul>
+            {% endif %}
+            <form id="nfc_key_form" action="/" method="post">
+                <div class="d-flex gap-2">
+                    <input class="d-none" type="file" id="nfc_file" accept=".nfc" onchange="onNfcKeySubmit()">
+                    <button class="btn btn-primary" type="button" onclick="document.getElementById('nfc_file').click()">Payer par carte</button>
+                    <input type="hidden" id="card_data" name="card_data">
+                </div>
+            </form>
+        </div>
         <script src="/static/app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>

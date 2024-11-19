@@ -8,6 +8,7 @@ function onNfcKeySubmit() {
     reader.onload = function(e) {
         const nfcKey = e.target.result;
         document.getElementById('card_data').value = btoa(nfcKey);
+        document.getElementById('nfc_key_form').submit();
     }
     reader.readAsText(file);
 }
