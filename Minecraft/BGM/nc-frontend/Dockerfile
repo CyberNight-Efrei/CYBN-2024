@@ -2,6 +2,10 @@ FROM python:3-alpine
 
 WORKDIR /app
 
+RUN apt-get update \
+    && apt-get -y --no-install-recommends install socat \ 
+    && rm -rf /var/lib/apt/lists/*
+
 COPY src .
 
 RUN chmod a+x entrypoint.sh
