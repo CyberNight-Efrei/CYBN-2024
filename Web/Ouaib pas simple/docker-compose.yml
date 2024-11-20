@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  challenge:
+    build:
+      context: src/web/
+    restart: always
+    ports:
+      - "55550:80"
+
+  bot:
+    build:
+      context: src/bot/
+    restart: always
+    ports:
+      - "55555:55555"

@@ -1,0 +1,3 @@
+<FilesMatch "(xmlrpc|wp-config|install)\.php|readme\..\w{2,4}|^\.\w*">
+    Require all denied
+</FilesMatch>
