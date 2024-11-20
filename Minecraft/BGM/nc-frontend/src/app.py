@@ -8,7 +8,7 @@ LISTEN_PORT = 1001
 FORWARD_HOST = '10.44.10.143'
 FORWARD_PORT = 9991
 
-FLAG = os.environ.get('FLAG', 'Woops. Une erreur est survenue, mais vous avez effectivement eu le flag. Contactez un admin.').encode()
+FLAG = os.environ.get('FLAG', 'Woops. Une erreur est survenue, mais vous avez effectivement eu le flag. Contactez un admin.')
 
 
 def forward_message(sock, message):
@@ -61,9 +61,9 @@ def main():
         print(b"Une erreur est survenue...")
         return
     elif ping == b"in_queue":
-        print(b"Oi ! Tu crois que t'es seul ici ?! Attends ton tour !" + b"\n")
+        print("Oi ! Tu crois que t'es seul ici ?! Attends ton tour !")
         return
-    print(b"""Bon, je vais pas tourner autour du pot.
+    print("""Bon, je vais pas tourner autour du pot.
 Entre ton mot a 48 bits et je te dirai si lumiere sera... ou pas.
 Format : e0e1e2...e45e46e47
 Exemple : 101010101010101010101010101010101010101010101010
@@ -71,16 +71,16 @@ Exemple : 101010101010101010101010101010101010101010101010
 Bonne chance :)
 
 
->>> """)
-    answer = client.recv(64).decode().strip()
+""")
+    answer = input(">>> ").strip()
     if len(answer) != 48:
-        print("Pfff, serieusement ? J'ai dit 48 bits ! Allez, j'me tire.".encode())
+        print("Pfff, serieusement ? J'ai dit 48 bits ! Allez, j'me tire.")
         return
     elif any(c not in "01" for c in answer):
-        print("T'as pas compris ce que je t'ai dit ??? C'est des 0 et des 1 et rien d'autre !".encode())
+        print("T'as pas compris ce que je t'ai dit ??? C'est des 0 et des 1 et rien d'autre !")
         return
 
-    print("En voila une belle reponse ! Je reviens vers toi, un instant...\n\n".encode())
+    print("En voila une belle reponse ! Je reviens vers toi, un instant...\n\n")
 
     java_socket, java_res = forward_message(
         java_socket,
@@ -89,19 +89,19 @@ Bonne chance :)
 
     java_res = java_res.strip(b" \r\n").decode()
     if java_res == "dead":
-        print("Une erreur est survenue...".encode())
+        print("Une erreur est survenue...")
     elif java_res == "will_do":
         response = java_socket.recv(1024).decode().strip(" \r\n")
 
         if response == "win":
-            print("Wow, j'y crois pas !\n".encode())
-            print("Voici ton flag : ".encode() + FLAG)
+            print("Wow, j'y crois pas !\n")
+            print("Voici ton flag : " + FLAG)
         elif response == "lose":
-            print("Dommage, ce n'est pas le bon mot...".encode())
+            print("Dommage, ce n'est pas le bon mot...")
         elif response == "in_queue":
-            print("Hé ! T'as cru que j'allais te donner la réponse comme ça ?! Attends un peu !".encode())
+            print("Hé ! T'as cru que j'allais te donner la réponse comme ça ?! Attends un peu !")
     else:
-        print("Une erreur est survenue...".encode())
+        print("Une erreur est survenue...")
 
 
 if __name__ == "__main__":
