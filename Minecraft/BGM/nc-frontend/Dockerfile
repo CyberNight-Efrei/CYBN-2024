@@ -8,7 +8,7 @@ RUN apt-get update \
 
 COPY src .
 
-RUN chmod a+x entrypoint.sh
+RUN chmod -R 755 /app
 
 EXPOSE 1001
 
