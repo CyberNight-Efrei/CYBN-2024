@@ -10,7 +10,7 @@ Ici tu trouveras la meilleure sélection de bloc de la région !
 
 - Auteurs : Niilyx et calygael
 
-## Fichiers (si besoin)
+## Fichiers
 [r.0.0.mca](r.0.0.mca)
 
 ## Indices
