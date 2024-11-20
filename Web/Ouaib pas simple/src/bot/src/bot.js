@@ -7,6 +7,7 @@ chalk.level = 3
 const TIMEOUT = 5000
 
 console.log("==========\nconsole.log, warn & error seront affichés ici.\n==========")
+process.stdout.write("url: ");
 
 
 async function goto(url) {
