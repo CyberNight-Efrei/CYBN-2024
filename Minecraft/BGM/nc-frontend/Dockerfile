@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY src .
 
+RUN chmod a+x entrypoint.sh
+
 EXPOSE 1001
 
 ENV PYTHONUNBUFFERED=1

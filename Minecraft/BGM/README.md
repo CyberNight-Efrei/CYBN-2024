@@ -6,7 +6,7 @@
 | État       | Validé ✅ |
 ## Description
 
-Le challenge est super simple : résout le circuit sur la map :)
+Le challenge est super simple : résous le circuit sur la map :)
 
 - Auteurs : Niilyx et calygael
 
