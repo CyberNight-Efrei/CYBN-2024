@@ -1,6 +1,10 @@
-FROM python:3-alpine
+FROM python:3.12-slim
 
 WORKDIR /app
+
+RUN apt-get update \
+    && apt-get -y --no-install-recommends install socat \ 
+    && rm -rf /var/lib/apt/lists/*
 
 COPY src .
 

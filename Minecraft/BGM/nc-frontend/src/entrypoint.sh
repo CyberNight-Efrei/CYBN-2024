@@ -3,5 +3,5 @@
 while :
 do
   # run python app.py
-  python3 app.py
+  socat TCP-LISTEN:1001,reuseaddr,fork EXEC:'/app/app.py,stderr'
 done
