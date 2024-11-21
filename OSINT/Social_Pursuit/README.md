@@ -59,7 +59,7 @@ Telegram → Inspecter l'élément → Url du compte → Bannière
 
 L'étau commence à se refermer autour de la suspecte. D'après un informateur, celle-ci semble avoir des relations à l'étrangers avec des entreprises. Tu devrais pouvoir continuer tes recherches depuis le point où tu es. L'entreprise en question est un des leader de son marché et a reçu de nombreux prix. 
 
-Où se déroulait cet évènement que la médaille commémore ? 
+Où se déroulait cet évènement que la médaille, obtenue en 2015, commémore ? 
 
 Quel gouvernement municipal a permis à l'entreprise de lancer un projet le 19 septembre 2017 ?
 
