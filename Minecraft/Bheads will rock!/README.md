@@ -14,7 +14,6 @@ J'ai juste eu le temps de le voir se diriger vers une étendue d'eau. Il m'avait
 Aide-moi à trouver les coordonées à l'origine du chunk de sa base cachée !
 
 **Format du flag :** `CYBN{X_Z}`
-*La seed du monde est le produit des coordonnées trouvées pour le flag*
 
 - calygael et Niilyx
 
