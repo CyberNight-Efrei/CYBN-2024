@@ -158,6 +158,6 @@ fn main() {
     println!("        M3OW_B0T C2      ");
     println!("--=-=--=-=--=-=--=-=-=-=-");
 
-    let srv = Server::new("127.0.0.1", 8080);
+    let srv = Server::new("0.0.0.0", 8080);
     srv.start();
 }
