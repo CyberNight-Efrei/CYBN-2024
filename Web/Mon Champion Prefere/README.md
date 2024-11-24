@@ -18,6 +18,10 @@ Note : dans un jeu, patch un champion signifie lui augmenter ou lui baisser ses 
 
 - Auteur : Onelots
 
+# WRITEUP :
+
+https://onelots.fr/posts/2024/cybernight-2024/sivir/
+
 ## Fichiers (si besoin)
 
 Pas besoin.
