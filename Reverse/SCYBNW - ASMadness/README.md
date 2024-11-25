@@ -3,7 +3,7 @@
 | Catégorie  | Reverse |
 |------------|---------|
 | Difficulté | Difficile 😠 | 
-| État       | À tester 🎯 | Validé ✅ |
+| État       | À tester 🎯 + Validé ✅ |
 ## Description
 
 Ok ok, pas mal. Mais qu'est-ce que tu dis de ça ?

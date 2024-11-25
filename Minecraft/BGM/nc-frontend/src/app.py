@@ -10,6 +10,11 @@ FORWARD_PORT = 9991
 
 FLAG = os.environ.get('FLAG', 'Woops. Une erreur est survenue, mais vous avez effectivement eu le flag. Contactez un admin.')
 
+"""
+Heyyy ! Encore du code pourri (réfère toi à BGM si tu veux encore plus de rant) ! Quel génie l'auteur de ce code, hein ?!
+J'espère que t'as aimé la CyberNight (surtout avec le bypass frauduleux inhérent à ce challenge) parce qu'après ça
+je suis inembauchable...
+"""
 
 def forward_message(sock, message):
     try:

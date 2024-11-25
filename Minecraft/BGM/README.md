@@ -20,4 +20,4 @@ Le challenge est super simple : résous le circuit sur la map :)
 </details>
 
 ## Pistes
-z3 bro
+circuit parser into z3 bro
