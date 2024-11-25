@@ -29,4 +29,4 @@ Aide-moi à trouver les coordonées à l'origine du chunk de sa base cachée !
 `CYBN{-6960_11664}`
 
 ## Pistes
-[Write-Up de @calygael]()
+[Write-Up de @calygael](https://medium.com/@calygael/cybernight-2024-bheads-will-rock-40cf1024b93a)
