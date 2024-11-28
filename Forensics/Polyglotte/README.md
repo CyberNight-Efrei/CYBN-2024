@@ -2,8 +2,8 @@
 
 | Catégorie  | Forensics   |
 |------------|-------------|
-| Difficulté | Easy 😊   | 
-| État       | A tester 🎯 |
+| Difficulté | Easy 😊  -> Moyen 🙂 | 
+| État       | À tester 🎯 -> Validé ✅ |
 ## Description
 
 Comme les humains, les ordinateurs discutent entre eux dans de nombreuses langues différentes.
@@ -19,5 +19,5 @@ Retrouvez toutes les parties du flag
 ||`CYBN{Sp3AK1ng_T0ngU35_@nD_Pr0toCol5}`||
 
 ## Pistes
-Récupérer les objets HTTP, SMB et FTP
+Récupérer les objets HTTP, SMB et FTP \
 Trouver les morceaux de flags dans les fichiers de drapeaux
